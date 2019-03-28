@@ -1,0 +1,5 @@
+sylius_shipping:
+    resources:
+        shipping_method:
+            classes:
+                model: App\Entity\ShippingMethod
