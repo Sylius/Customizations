@@ -146,6 +146,7 @@ sylius_product:
         product:
             classes:
                 model: App\Entity\Product\Product
+                repository: App\Repository\ProductRepository
             translation:
                 classes:
                     model: App\Entity\Product\ProductTranslation
