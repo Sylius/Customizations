@@ -1,0 +1,13 @@
+app_admin_custom_product_index:
+    path: /admin/custom-products/
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product:indexAction
+        _sylius:
+            template: '@SyliusShop/Product/_horizontalList.html.twig'
+            repository:
+                method: findAllByOnHand
+                arguments: [2]
+            criteria: false
+        paginate: false
+        limit: 100
