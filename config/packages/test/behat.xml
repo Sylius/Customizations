@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true" />
+
+        <service id="app.behat.context.ui.admin.managing_shipping_methods" class="App\Tests\Behat\Contexts\Ui\Admin\ManagingShippingMethodsContext">
+            <argument type="service" id="app.behat.page.admin.shipping_method.update" />
+        </service>
+        <service id="app.behat.page.admin.shipping_method.update" class="App\Tests\Behat\Page\ShippingMethod\UpdatePage" parent="sylius.behat.page.admin.shipping_method.update" public="true" />
+    </services>
+</container>
