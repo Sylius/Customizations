@@ -1,0 +1,6 @@
+app:
+    form:
+        extension:
+            type:
+                country:
+                    flag: 'Flag'
