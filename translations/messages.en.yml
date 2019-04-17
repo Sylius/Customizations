@@ -1,0 +1,6 @@
+app:
+    form:
+        extension:
+            type:
+                shipping_method:
+                    estimated_delivery_time: 'Estimated delivery time'
