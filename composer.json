@@ -1,4 +1,6 @@
 {
+    "name": "sylius/customizations",
+    "description": "Example project for Sylius customizations.",
     "keywords": ["symfony", "symfony2", "sylius", "distribution", "ecommerce", "cart", "shopping"],
     "type": "project",
     "license": "proprietary",
