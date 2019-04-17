@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Doctrine\ORM;
 
+use App\Repository\ProductRepositoryInterface;
 use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository as BaseProductRepository;
 
-final class ProductRepository extends BaseProductRepository
+final class ProductRepository extends BaseProductRepository implements ProductRepositoryInterface
 {
     public function findAllByOnHand(int $limit = 8): array
     {
