@@ -1,0 +1,6 @@
+app:
+    form:
+        extension:
+            type:
+                shipping_method_translation:
+                    delivery_conditions: 'Delivery Conditions'
