@@ -8,6 +8,51 @@ default:
             paths: false
             snippets: false
 
+    suites:
+        ui_customer_account:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+                - sylius.behat.context.hook.email_spool
+
+                - sylius.behat.context.transform.address
+                - sylius.behat.context.transform.channel
+                - sylius.behat.context.transform.country
+                - sylius.behat.context.transform.customer
+                - sylius.behat.context.transform.lexical
+                - sylius.behat.context.transform.order
+                - sylius.behat.context.transform.payment
+                - sylius.behat.context.transform.product
+                - sylius.behat.context.transform.shared_storage
+                - sylius.behat.context.transform.shipping_method
+                - sylius.behat.context.transform.user
+                - sylius.behat.context.transform.zone
+
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.currency
+                - sylius.behat.context.setup.customer
+                - sylius.behat.context.setup.geographical
+                - sylius.behat.context.setup.order
+                - sylius.behat.context.setup.payment
+                - sylius.behat.context.setup.product
+                - sylius.behat.context.setup.shop_security
+                - sylius.behat.context.setup.shipping
+                - sylius.behat.context.setup.user
+                - sylius.behat.context.setup.zone
+
+                - app.behat.context.ui.shop.customer_profile
+                - sylius.behat.context.ui.channel
+                - sylius.behat.context.ui.shop.account
+                - sylius.behat.context.ui.shop.cart
+                - sylius.behat.context.ui.shop.checkout
+                - sylius.behat.context.ui.shop.checkout.addressing
+                - sylius.behat.context.ui.shop.checkout.shipping
+                - sylius.behat.context.ui.shop.checkout.payment
+                - sylius.behat.context.ui.shop.checkout.complete
+                - sylius.behat.context.ui.shop.currency
+
+            filters:
+                tags: "@customer_account && @ui"
+
     extensions:
         Lakion\Behat\MinkDebugExtension:
             directory: etc/build
@@ -41,6 +86,22 @@ default:
             show_auto: false
 
         FriendsOfBehat\SymfonyExtension: ~
+
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/account/customer_account/customer_profile_validation.feature"
+                - "vendor/sylius/sylius/features/account/customer_account/editing_customer_profile.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/being_able_to_create_account_for_existing_customer.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/changing_customer_email.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/customer_unique_email_validation.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/customer_validation.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/editing_customer.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/toggling_customer_account.feature"
+                - "vendor/sylius/sylius/features/user/managing_users/changing_shop_user_password.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer_account.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer_account_after_failed_creation_action.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/specifying_province_manually.feature"
 
         FriendsOfBehat\VariadicExtension: ~
 
