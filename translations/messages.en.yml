@@ -1,0 +1,5 @@
+app:
+    form:
+        customer:
+            secondary_phone_number: 'Secondary phone number'
+            surname: 'Surname'
