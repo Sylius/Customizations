@@ -8,6 +8,44 @@ default:
             paths: false
             snippets: false
 
+    suites:
+        ui_managing_product_variants:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.transform.channel
+                - sylius.behat.context.transform.currency
+                - sylius.behat.context.transform.locale
+                - sylius.behat.context.transform.lexical
+                - sylius.behat.context.transform.product
+                - sylius.behat.context.transform.product_variant
+                - sylius.behat.context.transform.shared_storage
+                - sylius.behat.context.transform.channel
+                - sylius.behat.context.transform.customer
+                - sylius.behat.context.transform.payment
+                - sylius.behat.context.transform.shipping_method
+                - sylius.behat.context.transform.address
+
+                - sylius.behat.context.setup.locale
+                - sylius.behat.context.setup.payment
+                - sylius.behat.context.setup.order
+                - sylius.behat.context.setup.shipping
+                - sylius.behat.context.setup.shipping_category
+                - sylius.behat.context.setup.geographical
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.currency
+                - sylius.behat.context.setup.locale
+                - sylius.behat.context.setup.product
+                - sylius.behat.context.setup.admin_security
+
+                - app.behat.context.ui.admin.managing_product_variants
+                - sylius.behat.context.ui.admin.browsing_product_variants
+                - sylius.behat.context.ui.admin.managing_product_variants
+                - sylius.behat.context.ui.admin.notification
+
+            filters:
+                tags: "@managing_product_variants && @ui"
+
     extensions:
         Lakion\Behat\MinkDebugExtension:
             directory: etc/build
@@ -41,6 +79,39 @@ default:
             show_auto: false
 
         FriendsOfBehat\SymfonyExtension: ~
+
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/product/managing_product_variants/adding_product_variant.feature"
+                - "vendor/sylius/sylius/features/product/managing_product_variants/product_variant_validation.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_prices_for_multiple_channels.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/disable_or_enable_inventory_on_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug_in_multiple_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/product_validation.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/removing_product_price_after_channel_deletion.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_associations_to_existing_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_associations.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_images.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_integer_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_percent_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_text_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_text_attributes_to_existing_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_text_attribute_in_different_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/changing_associations_of_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_attributes.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug_in_multiple_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/product_validation.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/removing_images_of_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/select_taxons_for_new_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/select_taxons_for_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_associations_to_existing_product.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/specifying_province_manually.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_images_to_existing_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/changing_images_of_product.feature"
 
         FriendsOfBehat\VariadicExtension: ~
 
