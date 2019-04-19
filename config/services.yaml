@@ -27,3 +27,9 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    app.factory.product:
+        class: App\Factory\ProductFactory
+        decorates: sylius.factory.product
+        arguments: ['@app.factory.product.inner']
+        public: false

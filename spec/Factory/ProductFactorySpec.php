@@ -44,7 +44,7 @@ final class ProductFactorySpec extends ObjectBehavior
     {
         $productFactory->createWithVariant()->willReturn($product);
 
-        $product->setEnabled(false);
+        $product->setEnabled(false)->shouldBeCalled();
 
         $this->createDisabled()->shouldReturn($product);
     }
