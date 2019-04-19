@@ -42,6 +42,23 @@ default:
 
         FriendsOfBehat\SymfonyExtension: ~
 
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_prices_for_multiple_channels.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug_in_multiple_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/product_validation.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/choosing_province_for_country.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/specifying_province_manually.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_associations.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_images.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_integer_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_percent_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_text_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_text_attribute_in_different_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_slug.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/select_taxons_for_new_product.feature"
+
         FriendsOfBehat\VariadicExtension: ~
 
         FriendsOfBehat\SuiteSettingsExtension:
