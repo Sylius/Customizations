@@ -260,3 +260,7 @@ winzou_state_machine:
     sylius_order:
         states:
             new_custom_state: ~
+        transitions:
+            restore:
+                from: [cancelled]
+                to: new
