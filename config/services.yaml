@@ -37,3 +37,8 @@ services:
         class: App\Menu\AccountMenuListener
         tags:
             - { name: kernel.event_listener, event: sylius.menu.shop.account, method: addAccountMenuItems }
+
+    app.listener.admin.customer.show.menu_builder:
+        class: App\Menu\AdminCustomerShowMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.customer.show, method: addAdminCustomerShowMenuItems }
