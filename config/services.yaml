@@ -47,3 +47,8 @@ services:
         class: App\Menu\AdminProductFormMenuListener
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.product.form, method: addItems }
+
+    app.listener.admin.product_variant.form.menu_builder:
+        class: App\Menu\AdminProductVariantFormMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.product_variant.form, method: addItems }
