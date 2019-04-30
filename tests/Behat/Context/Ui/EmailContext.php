@@ -23,6 +23,6 @@ final class EmailContext implements Context
      */
     public function anEmailWithReviewConfirmationShouldBeSentTo(string $emailAddress): void
     {
-        Assert::true($this->emailChecker->hasMessageTo('Your review has been added Yeah !', $emailAddress));
+        Assert::true($this->emailChecker->hasMessageTo('Your review has been accepted.', $emailAddress));
     }
 }

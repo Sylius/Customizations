@@ -1,0 +1,8 @@
+sylius_mailer:
+    sender:
+        name: Review confirmation
+        address: admin@example.com
+    emails:
+        review_confirmation:
+            subject: Your review has just been accepted!
+            template: Emails/reviewConfirmation.html.twig

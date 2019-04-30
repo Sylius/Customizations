@@ -1,7 +1,7 @@
 @managing_product_reviews
 Feature: Receiving confirmation email after adding review
     In order to send email with confirmation after review accepted
-    As a Administrator
+    As an Administrator
     I want to send email to reviewer
 
     Background:

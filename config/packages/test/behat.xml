@@ -7,6 +7,5 @@
         <service id="app.behat.context.ui.email" class="App\Tests\Behat\Context\Ui\EmailContext">
             <argument type="service" id="sylius.behat.email_checker" />
         </service>
-
     </services>
 </container>

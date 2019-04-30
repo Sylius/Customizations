@@ -264,3 +264,10 @@ winzou_state_machine:
             restore:
                 from: [cancelled]
                 to: new
+    sylius_product_review:
+        callbacks:
+            after:
+                sylius_update_rating:
+                    on: ["accept"]
+                    do: ["@App\\ProductReview\\Mailer\\ConfirmationMailer", "sendEmail"]
+                    args: ["object"]
