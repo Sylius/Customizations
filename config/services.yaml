@@ -28,32 +28,26 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    app.listener.admin.menu_builder:
-        class: App\Menu\AdminMenuListener
+    App\Menu\AdminMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
 
-    app.listener.shop.menu_builder:
-        class: App\Menu\AccountMenuListener
+    App\Menu\AccountMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.shop.account, method: addAccountMenuItems }
 
-    app.listener.admin.customer.show.menu_builder:
-        class: App\Menu\AdminCustomerShowMenuListener
+    App\Menu\AdminCustomerShowMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.customer.show, method: addAdminCustomerShowMenuItems }
 
-    app.listener.admin.product.form.menu_builder:
-        class: App\Menu\AdminProductFormMenuListener
+    App\Menu\AdminProductFormMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.product.form, method: addItems }
 
-    app.listener.admin.product_variant.form.menu_builder:
-        class: App\Menu\AdminProductVariantFormMenuListener
+    App\Menu\AdminProductVariantFormMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.product_variant.form, method: addItems }
 
-    app.listener.admin.order.show.menu_builder:
-        class: App\Menu\AdminOrderShowMenuListener
+    App\Menu\AdminOrderShowMenuListener:
         tags:
             - { name: kernel.event_listener, event: sylius.menu.admin.order.show, method: addAdminOrderShowMenuItems }
