@@ -42,6 +42,26 @@ default:
 
         FriendsOfBehat\SymfonyExtension: ~
 
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/account/customer_account/customer_profile_validation.feature"
+                - "vendor/sylius/sylius/features/account/customer_account/editing_customer_profile.feature"
+                - "vendor/sylius/sylius/features/account/customer_account/viewing_orders_history/seeing_customer_orders_placed_as_guest.feature"
+                - "vendor/sylius/sylius/features/account/registering.feature"
+                - "vendor/sylius/sylius/features/account/registering_validation.feature"
+                - "vendor/sylius/sylius/features/account/renewing_account_after_deletion.feature"
+                - "vendor/sylius/sylius/features/account/signing_in_validation.feature"
+                - "vendor/sylius/sylius/features/account/subscribing_newsletter_during_registration.feature"
+                - "vendor/sylius/sylius/features/account/verification/verifying_email_address.feature"
+                - "vendor/sylius/sylius/features/cart/shopping_cart/maintaining_cart_after_authorization.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer_account.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/adding_customer_account_after_failed_creation_action.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/being_able_to_create_account_for_existing_customer.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/changing_customer_email.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/customer_unique_email_validation.feature"
+                - "vendor/sylius/sylius/features/user/managing_customers/customer_validation.feature"
+
         FriendsOfBehat\VariadicExtension: ~
 
         FriendsOfBehat\SuiteSettingsExtension:
