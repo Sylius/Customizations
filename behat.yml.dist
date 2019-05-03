@@ -42,6 +42,13 @@ default:
 
         FriendsOfBehat\SymfonyExtension: ~
 
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/taxonomy/managing_taxons/editing_taxon.feature"
+                - "vendor/sylius/sylius/features/taxonomy/managing_taxons/adding_images_to_existing_taxon.feature"
+                - "vendor/sylius/sylius/features/taxonomy/managing_taxons/changing_images_of_taxon.feature"
+                - "vendor/sylius/sylius/features/taxonomy/managing_taxons/removing_images_of_taxon.feature"
+
         FriendsOfBehat\VariadicExtension: ~
 
         FriendsOfBehat\SuiteSettingsExtension:
