@@ -27,3 +27,7 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    App\Grid\AdminProductsGridListener:
+        tags:
+            - { name: kernel.event_listener, event: sylius.grid.admin_product, method: removeImageField }
