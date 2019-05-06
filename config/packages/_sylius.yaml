@@ -255,3 +255,10 @@ sylius_theme:
         filesystem:
             directories:
                 - "%kernel.project_dir%/themes"
+
+sylius_grid:
+    grids:
+        sylius_admin_product_review:
+            fields:
+                title:
+                    enabled: false
