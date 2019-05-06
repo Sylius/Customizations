@@ -7,7 +7,7 @@ services:
     # Default configuration for services in *this* file
     _defaults:
         # Automatically injects dependencies in your services
-        autowire: true
+        autowire: false
 
         # Automatically registers your services as commands, event subscribers, etc.
         autoconfigure: true
@@ -20,10 +20,20 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Entity,Provider,Migrations,Tests,Kernel.php}'
 
     # Controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    app.controller.shop.homepage:
+        class: App\Controller\Shop\HomepageController
+        arguments: ['@templating']
+        tags: ['controller.service_arguments']
+
+    app.provider.product:
+        class: App\Provider\ProductProvider
+        arguments: ['@sylius.repository.product']
+        public: true
