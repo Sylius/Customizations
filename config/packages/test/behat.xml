@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true" />
+
+        <service id="app.behat.context.ui.shop.homepage" class="App\Tests\Behat\Context\Ui\Shop\HomePageContext">
+            <argument type="service" id="app.tests.behat.page.custom.custom_page" />
+            <argument type="service" id="app.tests.behat.page.shop.custom_home_page" />
+            <argument type="service" id="app.tests.behat.page.shop.product_page" />
+        </service>
+        <service id="app.tests.behat.page.custom.custom_page" class="App\Tests\Behat\Page\Custom\CustomPage" parent="sylius.behat.page.shop.home" public="false" />
+        <service id="app.tests.behat.page.shop.custom_home_page" class="App\Tests\Behat\Page\Shop\CustomHomePage" parent="sylius.behat.page.shop.home" public="false" />
+        <service id="app.tests.behat.page.shop.product_page" class="App\Tests\Behat\Page\Shop\ProductPage" parent="sylius.behat.page.shop.home" public="false" />
+    </services>
+</container>
