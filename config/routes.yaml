@@ -1,0 +1,17 @@
+app_shop_custom_index:
+    path: /custom
+    methods: [GET]
+    defaults:
+        _controller: app.controller.shop.homepage:indexAction
+
+app_shop_custom_custom_page:
+    path: /page/cutstom-page
+    methods: [GET]
+    defaults:
+        _controller: app.controller.shop.homepage:customAction
+
+app_shop_custom_product:
+    path: /page/product
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.product:showAction
