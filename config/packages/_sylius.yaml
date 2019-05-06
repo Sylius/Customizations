@@ -260,7 +260,8 @@ sylius_grid:
     grids:
         sylius_admin_product_review:
             fields:
-                title:
-                    enabled: false
                 date:
                     label: "When was it added?"
+            filters:
+                title:
+                    enabled: false
