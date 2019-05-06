@@ -145,6 +145,7 @@ sylius_product:
     resources:
         product:
             classes:
+                controller: App\Controller\ProductController
                 model: App\Entity\Product\Product
             translation:
                 classes:
