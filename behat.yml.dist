@@ -8,6 +8,21 @@ default:
             paths: false
             snippets: false
 
+    suites:
+        ui_homepage:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+                - sylius.behat.context.transform.lexical
+                - sylius.behat.context.transform.product
+                - sylius.behat.context.transform.shared_storage
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.product
+                - sylius.behat.context.setup.shop_security
+                - sylius.behat.context.ui.shop.homepage
+                - app.behat.context.ui.shop.homepage
+            filters:
+                tags: "@homepage && @ui"
+
     extensions:
         Lakion\Behat\MinkDebugExtension:
             directory: etc/build
@@ -41,6 +56,18 @@ default:
             show_auto: false
 
         FriendsOfBehat\SymfonyExtension: ~
+
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/checkout/addressing_order/specifying_province_manually.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_integer_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_percent_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_product_with_text_attribute.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_text_attributes_to_existing_product.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/adding_text_attribute_in_different_locales.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/editing_product_attributes.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/product_validation.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/choosing_province_for_country.feature"
 
         FriendsOfBehat\VariadicExtension: ~
 
