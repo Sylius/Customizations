@@ -27,3 +27,10 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    app.block_event_listener.homepage.layout.after_header:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - 'block.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.layout.after_header, method: onBlockEvent }
