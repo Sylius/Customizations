@@ -42,6 +42,14 @@ default:
 
         FriendsOfBehat\SymfonyExtension: ~
 
+        FriendsOfBehat\ExcludeSpecificationsExtension:
+            features:
+                - "vendor/sylius/sylius/features/product/managing_product_reviews/deleting_product_review.feature"
+                - "vendor/sylius/sylius/features/product/managing_product_reviews/recalculating_product_average_rating.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/prevent_deletion_of_purchased_product.feature"
+                - "vendor/sylius/sylius/features/checkout/addressing_order/specifying_province_manually.feature"
+                - "vendor/sylius/sylius/features/product/managing_products/select_taxons_for_new_product.feature"
+
         FriendsOfBehat\VariadicExtension: ~
 
         FriendsOfBehat\SuiteSettingsExtension:

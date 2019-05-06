@@ -8,7 +8,7 @@ use Sylius\Component\Grid\Event\GridDefinitionConverterEvent;
 
 final class AdminProductsGridListener
 {
-    public function removeImageField(GridDefinitionConverterEvent $event): void 
+    public function removeImageField(GridDefinitionConverterEvent $event): void
     {
         $grid = $event->getGrid();
 
