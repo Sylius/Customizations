@@ -270,3 +270,14 @@ sylius_grid:
                     delete:
                         type: delete
                         enabled: false
+        sylius_admin_product:
+            actions:
+                item:
+                    show:
+                        type: show
+                        label: Show in the shop
+                        options:
+                            link:
+                                route: sylius_shop_product_show
+                                parameters:
+                                    slug: resource.slug
