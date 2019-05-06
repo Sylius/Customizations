@@ -265,3 +265,8 @@ sylius_grid:
             filters:
                 title:
                     enabled: false
+            actions:
+                item:
+                    delete:
+                        type: delete
+                        enabled: false
