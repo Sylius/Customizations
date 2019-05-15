@@ -16,9 +16,9 @@ All customization guides are available in the [**Sylius documentation: Customiza
 Links
 -----
 
-[**sylius**](https://github.com/Sylius/Sylius)
+[**Sylius**](https://github.com/Sylius/Sylius)
 <br>
-[**sylius-standard**](https://github.com/Sylius/Sylius-Standard)
+[**Sylius-Standard**](https://github.com/Sylius/Sylius-Standard)
 
 MIT License
 -----------
