@@ -296,6 +296,13 @@ sylius_fixtures:
                             ups:
                                 channels:
                                     - "HUN_WEB"
+                            geis:
+                                code: "geis"
+                                name: "geis"
+                                enabled: true
+                                channels:
+                                    - "PL_WEB"
+                                deliveryConditions: "delivered"
                 payment_method:
                     options:
                         custom:
