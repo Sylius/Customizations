@@ -1,0 +1,215 @@
+sylius_fixtures:
+    suites:
+        poland:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                locale: ~
+                currency:
+                    options:
+                        currencies: ['PLN']
+
+                geographical:
+                    options:
+                        countries:
+                            - "PL"
+                        zones:
+                            PL:
+                                name: "Poland"
+                                countries:
+                                    - "PL"
+
+                channel:
+                    options:
+                        custom:
+                            pl_web_store:
+                                name: "PL Web Store"
+                                code: "PL_WEB"
+                                locales:
+                                    - "%locale%"
+                                currencies:
+                                    - "PLN"
+                                enabled: true
+                                hostname: "localhost"
+
+                payment_method:
+                    options:
+                        custom:
+                            cash_on_delivery:
+                                code: "cash_on_delivery"
+                                name: "Cash on delivery"
+                                channels:
+                                    - "PL_WEB"
+                            bank_transfer:
+                                code: "bank_transfer"
+                                name: "Bank transfer"
+                                channels:
+                                    - "PL_WEB"
+                                enabled: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            ups:
+                                code: "ups"
+                                name: "UPS"
+                                enabled: true
+                                channels:
+                                    - "PL_WEB"
+                            dhl_express:
+                                channels:
+                                    - "PL_WEB"
+                            inpost:
+                                code: "inpost"
+                                name: "InPost"
+                                channels:
+                                    - "PL_WEB"
+
+                customer_group:
+                    options:
+                        custom:
+                            retail:
+                                code: "retail"
+                                name: "Retail"
+                            wholesale:
+                                code: "wholesale"
+                                name: "Wholesale"
+
+                shop_user:
+                    name: "shop_user"
+                    options:
+                        random: 2
+                        custom:
+                            -
+                                email: "shop@example.com"
+                                first_name: "John"
+                                last_name: "Doe"
+                                password: "sylius"
+                            -
+                                email: "custom@example.com"
+                                first_name: "Marek"
+                                last_name: "Markowski"
+                                password: "sylius"
+
+                admin_user:
+                    name: "admin_user"
+                    options:
+                        custom:
+                            -
+                                email: "sylius@example.com"
+                                username: "sylius"
+                                password: "sylius"
+                                enabled: true
+                                locale_code: "%locale%"
+                                first_name: "Jan"
+                                last_name: "Kowalski"
+                            -
+                                email: "api@example.com"
+                                username: "api"
+                                password: "sylius-api"
+                                enabled: true
+                                locale_code: "%locale%"
+                                first_name: "Zbigniew"
+                                last_name: "Nowak"
+                                api: true
+
+                tax_category:
+                    options:
+                        custom:
+                            clothing:
+                                code: "clothing"
+                                name: "Clothing"
+                            books:
+                                code: "books"
+                                name: "Books"
+                            other:
+                                code: "other"
+                                name: "Other"
+
+                tax_rate:
+                    options:
+                        custom:
+                            clothing_tax:
+                                code: "clothing_sales_tax_10"
+                                name: "Clothing Sales Tax 10%"
+                                zone: "PL"
+                                category: "clothing"
+                                amount: 0.1
+                            books_tax:
+                                code: "books_sales_tax_5"
+                                name: "Books Sales Tax 5%"
+                                zone: "PL"
+                                category: "books"
+                                amount: 0.05
+                            default_sales_tax:
+                                code: "sales_tax_20"
+                                name: "Sales Tax 20%"
+                                zone: "PL"
+                                category: "other"
+                                amount: 0.2
+
+                promotion:
+                    options:
+                        custom:
+                            black_friday:
+                                code: "black_friday"
+                                name: "Black Friday"
+                                channels:
+                                    - "PL_WEB"
+                            new_year:
+                                code: "new_year"
+                                name: "New Year"
+                                usage_limit: 10
+                                priority: 2
+                                starts_at: "-7 day"
+                                ends_at: "7 day"
+                                channels:
+                                    - "PL_WEB"
+                                rules:
+                                    -
+                                        type: "item_total"
+                                        configuration:
+                                            PL_WEB:
+                                                amount: 100.00
+                                actions:
+                                    -
+                                        type: "order_fixed_discount"
+                                        configuration:
+                                            PL_WEB:
+                                                amount: 10.00
+
+                mug_product:
+                    options:
+                        amount: 30
+
+                sticker_product:
+                    options:
+                        amount: 20
+
+                book_product:
+                    options:
+                        amount: 15
+
+                tshirt_product:
+                    options:
+                        amount: 15
+
+                product_review:
+                    options:
+                        random: 50
+
+                similar_product_association:
+                    options:
+                        amount: 20
+
+                order:
+                    options:
+                        amount: 20
+
+                address:
+                    options:
+                        random: 10
+                        prototype:
+                            country_code: PL
