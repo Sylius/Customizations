@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Factory;
+namespace App\Fixture\Factory;
 
 use App\Entity\Shipping\ShippingMethod;
-use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ShippingMethodExampleFactory as BaseShippingMethodExampleFactory;
 use Sylius\Component\Channel\Repository\ChannelRepositoryInterface;
 use Sylius\Component\Core\Model\ShippingMethodInterface;
@@ -14,7 +13,7 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-final class ShippingMethodExampleFactory extends BaseShippingMethodExampleFactory implements ExampleFactoryInterface
+final class ShippingMethodExampleFactory extends BaseShippingMethodExampleFactory
 {
     /** @var RepositoryInterface */
     private $localeRepository;

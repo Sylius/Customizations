@@ -20,7 +20,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{Entity,Form,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Entity,Fixture,Form,Migrations,Tests,Kernel.php}'
 
     # Controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
@@ -32,3 +32,22 @@ services:
         class: App\Form\Extension\ShippingMethodTranslationTypeExtension
         tags:
             - { name: form.type_extension, extended_type: Sylius\Bundle\ShippingBundle\Form\Type\ShippingMethodTranslationType }
+
+    sylius.fixture.example_factory.shipping_method:
+        class: App\Fixture\Factory\ShippingMethodExampleFactory
+        arguments:
+            - "@sylius.factory.shipping_method"
+            - "@sylius.repository.zone"
+            - "@sylius.repository.shipping_category"
+            - "@sylius.repository.locale"
+            - "@sylius.repository.channel"
+            - "@sylius.repository.tax_category"
+        public: true
+
+    sylius.fixture.shipping_method:
+        class: App\Fixture\ShippingMethodFixture
+        arguments:
+            - "@sylius.manager.shipping_method"
+            - "@sylius.fixture.example_factory.shipping_method"
+        tags:
+            - { name: sylius_fixtures.fixture }
